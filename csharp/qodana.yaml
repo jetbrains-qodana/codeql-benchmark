@@ -1,0 +1,23 @@
+#-------------------------------------------------------------------------------#
+#               Qodana analysis is configured by qodana.yaml file               #
+#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
+#-------------------------------------------------------------------------------#
+
+#################################################################################
+#              WARNING: Do not store sensitive information in this file,        #
+#               as its contents will be included in the Qodana report.          #
+#################################################################################
+version: "1.0"
+
+profile:
+  base:
+    name: empty
+  groups:
+    - groupId: IncludedInspections
+      groups:
+        - "category:OpenGrep"
+  inspections:
+    - group: IncludedInspections
+      enabled: true
+
+linter: jetbrains/qodana-dotnet:2026.1

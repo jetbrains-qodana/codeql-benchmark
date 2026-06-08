@@ -1,0 +1,12 @@
+# Qodana artifacts
+.qodana/
+.qodana-results/
+
+# IDE / build noise
+.idea/
+bin/
+obj/
+
+# Python
+__pycache__/
+*.pyc

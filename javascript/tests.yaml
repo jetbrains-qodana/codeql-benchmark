@@ -1,0 +1,29 @@
+# JavaScript/TypeScript test folders to include in the benchmark.
+# Paths are relative to: <codeql-repo>/javascript/ql/test/query-tests/Security/
+#
+# Each entry becomes a folder under javascript/tests/<flattened-name>/
+# where slashes are replaced by underscores (CWE-079/DomBasedXss -> CWE-079_DomBasedXss).
+
+tests:
+  - CWE-022/TaintedPath
+  - CWE-022/ZipSlip
+  - CWE-078/CommandInjection
+  - CWE-078/IndirectCommandInjection
+  - CWE-078/SecondOrderCommandInjection
+  - CWE-078/ShellCommandInjectionFromEnvironment
+  - CWE-078/UnsafeShellCommandConstruction
+  - CWE-078/UselessUseOfCat
+  - CWE-079/DomBasedXss
+  - CWE-079/DomBasedXssWithResponseThreat
+  - CWE-079/ExceptionXss
+  - CWE-079/ReflectedXss
+  - CWE-079/StoredXss
+  - CWE-079/UnsafeHtmlConstruction
+  - CWE-079/UnsafeJQueryPlugin
+  - CWE-079/XssThroughDom
+  - CWE-094/CodeInjection
+  - CWE-094/UnsafeDynamicMethodAccess
+  - CWE-601/ClientSideUrlRedirect
+  - CWE-601/ServerSideUrlRedirect
+  - CWE-643
+  - CWE-918

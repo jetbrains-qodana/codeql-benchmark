@@ -1,0 +1,20 @@
+# Test folders to include in the benchmark.
+# Paths are relative to: <codeql-repo>/csharp/ql/test/query-tests/Security Features/
+#
+# Each entry becomes a folder under output/Benchmark/<flattened-name>/
+# where the slash is replaced by underscore (e.g. CWE-079/XSS -> CWE-079_XSS).
+
+tests:
+  - CWE-022/TaintedPath
+  - CWE-022/ZipSlip
+  - CWE-078
+  - CWE-079/StoredXSS
+  - CWE-079/XSS
+  - CWE-079/XSSAsp
+  - CWE-079/XssPageModels
+  - CWE-079/XSSRazorPages
+  - CWE-089
+  - CWE-089-2
+  - CWE-601/UrlRedirect
+  - CWE-643
+  - CWE-807
