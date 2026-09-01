@@ -41,11 +41,11 @@ for JS that's `javascript/{package.json,tsconfig.json}` plus every
 
 ```bash
 docker run --rm -it \
-  -v "$PWD/csharp":/data/project \
-  -v "$PWD/csharp/results":/data/results \
   -p 8080:8080 \
   -e QODANA_TOKEN="$QODANA_TOKEN" \
-  jetbrains/qodana-dotnet:2026.1 \
+  -v "$PWD/csharp":/data/project \
+  -v "$PWD/csharp/results":/data/results \
+  jetbrains/qodana-dotnet:2026.2 \
   --show-report
 ```
 
@@ -53,11 +53,24 @@ docker run --rm -it \
 
 ```bash
 docker run --rm -it \
-  -v "$PWD/javascript":/data/project \
-  -v "$PWD/javascript/results":/data/results \
   -p 8080:8080 \
   -e QODANA_TOKEN="$QODANA_TOKEN" \
-  jetbrains/qodana-dotnet:2026.1 \
+  -v "$PWD/javascript":/data/project \
+  -v "$PWD/javascript/results":/data/results \
+  jetbrains/qodana-dotnet:2026.2 \
+  --show-report
+```
+
+By default, taint analysis is configured for monitoring one hundred (100) traces at a time. You can override this using the dfa.analysis.rml.max.traces.count=<number> property, for example:
+
+```bash
+docker run --rm -it \
+  -p 8080:8080 \
+  -e QODANA_TOKEN="$QODANA_TOKEN" \
+  -v "$PWD/javascript":/data/project \
+  -v "$PWD/javascript/results":/data/results \
+  jetbrains/qodana-dotnet:2026.2 \
+  --property=dfa.analysis.rml.max.traces.count=1000
   --show-report
 ```
 
